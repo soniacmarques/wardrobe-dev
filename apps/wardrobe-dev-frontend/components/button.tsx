@@ -1,13 +1,7 @@
 "use client";
-import Button from '@mui/material/Button';
-import { styled } from '@mui/material/styles';
+import Button from "@mui/material/Button";
 
-const CustomButton = styled(Button)({
-  backgroundColor: '#1976d2',
-  color: '#fff',
-  '&:hover': {
-    backgroundColor: '#1565c0',
-  },
-}) as typeof Button;
-
-export { CustomButton };
+const CustomButton = (props: React.ComponentProps<typeof Button>) => {
+  return <Button variant="contained" color="secondary" {...props}></Button>;
+};
+export default CustomButton;
