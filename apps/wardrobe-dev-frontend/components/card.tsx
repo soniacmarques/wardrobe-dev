@@ -1,6 +1,6 @@
 import Card from "@mui/material/Card";
 
-const CustomCard = () => {
+const CustomCard = (props: { children: React.ReactNode }) => {
   return (
     <Card
       style={{
@@ -11,7 +11,7 @@ const CustomCard = () => {
         height: "100%",
       }}
     >
-      <img src="/pics/1.jpg" alt="Custom Image" width={200} height={200} />
+      {props.children}
     </Card>
   );
 };

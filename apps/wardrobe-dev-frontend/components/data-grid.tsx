@@ -1,3 +1,5 @@
+import CustomCard from "./card";
+
 type Item = {
   title: string;
   description: string;
@@ -20,11 +22,9 @@ export default async function DataGrid() {
 
   return (
     <div>
-      <ul>
-        {posts.map((item, index) => (
-          <li key={index}>{item.title}</li>
-        ))}
-      </ul>
+      {posts.map((item, index) => (
+        <CustomCard key={index}>{item.title}</CustomCard>
+      ))}
     </div>
   );
 }
