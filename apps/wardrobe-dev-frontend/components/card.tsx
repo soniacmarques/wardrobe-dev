@@ -1,4 +1,3 @@
-"use client";
 import Card from "@mui/material/Card";
 
 const CustomCard = () => {
