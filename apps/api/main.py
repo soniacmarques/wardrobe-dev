@@ -45,6 +45,12 @@ async def create_item(item: ItemBase, db: db_dependency):
     db.refresh(db_item)
     return db_item
 
+@app.get("/items/", status_code=status.HTTP_200_OK)
+async def read_items(db: db_dependency):
+    """Read all items"""
+    items = db.query(models.Item).all()
+    return items
+
 
 @app.get("/items/{item_id}", status_code=status.HTTP_200_OK)
 async def read_item(item_id: int, db: db_dependency):
@@ -74,6 +80,12 @@ async def create_user(user: UserBase, db: db_dependency):
     db.commit()
     db.refresh(db_user)
     return db_user
+
+@app.get("/users/", status_code=status.HTTP_200_OK)
+async def read_users(db: db_dependency):
+    """Read all users"""
+    users = db.query(models.User).all()
+    return users
 
 
 @app.get("/users/{user_id}", status_code=status.HTTP_200_OK)
